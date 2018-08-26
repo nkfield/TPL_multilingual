@@ -257,17 +257,17 @@ ggplot(canada_toronto) +
   coord_sf(datum = NA)
 ggsave("output_data/tpl_gap_map.png", width=20, height=16, units="cm")
 
-# Step 8: Mapping anyone in Toronto whose mother tongue is not English or French
+# Step 8: Mapping anyone in Toronto whose first language is not English or French
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_mother_not_ef), size=.1) + 
   scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Percent") + 
-  labs(title = "Whose mother tongue is not English or French?", 
+  labs(title = "Whose first language is not English or French?", 
        subtitle = "Plotted according to Toronto census tracts", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
   theme(plot.title = element_text(hjust=0), plot.subtitle = element_text(hjust=0.5)) + 
   theme_void() + 
   coord_sf(datum = NA)
-ggsave("output_data/mother_tongue_map.png", width=20, height=16, units="cm")
+ggsave("output_data/first_language_map.png", width=20, height=16, units="cm")
 
 # That's it! Thanks for running my script. If you have problems, suggestions, or
 # feedback, feel free to reach out to me at:
