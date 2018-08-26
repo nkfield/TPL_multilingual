@@ -1,0 +1,573 @@
+ID,Branch Name,Census Tract
+AG,Agincourt,370.01
+AG,Agincourt,374.01
+AG,Agincourt,374.02
+AG,Agincourt,374.03
+AG,Agincourt,375.02
+AG,Agincourt,375.03
+AG,Agincourt,376.01
+AG,Agincourt,376.15
+AG,Agincourt,376.16
+AG,Agincourt,377.01
+AG,Agincourt,377.02
+AG,Agincourt,377.03
+AG,Agincourt,378.02
+ACD,Albert Campbell,336
+ACD,Albert Campbell,337.01
+ACD,Albert Campbell,337.02
+ACD,Albert Campbell,340
+ACD,Albert Campbell,341.03
+ACD,Albert Campbell,341.04
+ACD,Albert Campbell,342
+ACD,Albert Campbell,343
+ACD,Albert Campbell,344.01
+ACD,Albert Campbell,344.02
+ACD,Albert Campbell,346.01
+AB,Albion,248.02
+AB,Albion,249.01
+AB,Albion,249.03
+AB,Albion,249.04
+AB,Albion,249.05
+AB,Albion,250.01
+AB,Albion,250.02
+AB,Albion,250.04
+AB,Albion,250.05
+AD,Alderwood,211
+AD,Alderwood,212
+AP,Amesbury Park,280
+AP,Amesbury Park,281.01
+AP,Amesbury Park,281.02
+AP,Amesbury Park,283.01
+AN,Annette,100
+AN,Annette,101
+AN,Annette,105
+AH,Armour Heights,275
+AH,Armour Heights,276.01
+AH,Armour Heights,298
+BF,Barbara Frum,276.02
+BF,Barbara Frum,277
+BF,Barbara Frum,278
+BF,Barbara Frum,279.01
+BF,Barbara Frum,279.02
+BF,Barbara Frum,286
+BF,Barbara Frum,287.02
+BF,Barbara Frum,287.03
+BF,Barbara Frum,287.04
+BF,Barbara Frum,288
+BF,Barbara Frum,297.02
+BY,Bayview,274.01
+BY,Bayview,274.02
+BY,Bayview,300
+BY,Bayview,305.01
+BY,Bayview,305.03
+BY,Bayview,305.04
+BY,Bayview,306.01
+BY,Bayview,306.02
+BY,Bayview,323.01
+BE,Beaches,20
+BE,Beaches,21
+BE,Beaches,24
+BD,Bendale,353.02
+BD,Bendale,354
+BD,Bendale,355.02
+BD,Bendale,355.04
+BD,Bendale,355.05
+BD,Bendale,355.06
+BC,Black Creek,282
+BC,Black Creek,292
+BC,Black Creek,294.01
+BL,Bloor Gladstone,53
+BL,Bloor Gladstone,54
+BL,Bloor Gladstone,55
+BL,Bloor Gladstone,94
+BL,Bloor Gladstone,95
+BL,Bloor Gladstone,96.01
+BL,Bloor Gladstone,96.02
+BL,Bloor Gladstone,97.01
+BL,Bloor Gladstone,97.03
+BL,Bloor Gladstone,97.04
+BR,Brentwood,214
+BR,Brentwood,218
+BR,Brentwood,219
+BR,Brentwood,225.01
+BR,Brentwood,225.02
+BR,Brentwood,226
+BR,Brentwood,227
+BR,Brentwood,228
+BR,Brentwood,229
+BRW,Bridlewood,375.01
+BRW,Bridlewood,375.04
+BRW,Bridlewood,375.05
+BRW,Bridlewood,376.02
+BRW,Bridlewood,376.08
+BRW,Bridlewood,376.11
+BRW,Bridlewood,376.12
+BB,Brookbanks,269.01
+BB,Brookbanks,269.02
+BB,Brookbanks,270.01
+BB,Brookbanks,270.02
+BB,Brookbanks,271.01
+BB,Brookbanks,271.02
+BB,Brookbanks,272.01
+BB,Brookbanks,272.02
+BUR,Burrows Hall,363.02
+BUR,Burrows Hall,378.03
+BUR,Burrows Hall,378.04
+BUR,Burrows Hall,378.07
+CED,Cedarbrae,356
+CED,Cedarbrae,357.01
+CED,Cedarbrae,357.02
+CED,Cedarbrae,364.01
+CED,Cedarbrae,364.02
+CED,Cedarbrae,365
+CED,Cedarbrae,366
+CED,Cedarbrae,367.01
+CE,Centennial,297.01
+CE,Centennial,309
+CE,Centennial,310.01
+CE,Centennial,310.02
+CE,Centennial,317.02
+CE,Centennial,317.03
+CE,Centennial,317.04
+CE,Centennial,317.05
+CE,Centennial,320.01
+CH,City Hall,14
+CH,City Hall,15
+CH,City Hall,34.01
+CH,City Hall,34.02
+CH,City Hall,35
+CH,City Hall,36
+CC,Cliffcrest,333
+CC,Cliffcrest,334
+CC,Cliffcrest,335
+CS,College Shaw,41
+CS,College Shaw,42
+CS,College Shaw,43
+CS,College Shaw,45
+CS,College Shaw,56
+CS,College Shaw,58
+DA,Danforth Coxwell,76
+DA,Danforth Coxwell,80.01
+DA,Danforth Coxwell,80.02
+DA,Danforth Coxwell,81
+DT,Davenport,114
+DT,Davenport,115
+DR,Dawes Road,180
+DR,Dawes Road,189
+DR,Dawes Road,190.01
+DR,Dawes Road,190.02
+DR,Dawes Road,191
+DP,Deer Park,86
+DP,Deer Park,87
+DP,Deer Park,120
+DP,Deer Park,121
+DP,Deer Park,122
+DP,Deer Park,123
+DP,Deer Park,124
+DP,Deer Park,125
+DM,Don Mills,262.02
+DM,Don Mills,263.02
+DM,Don Mills,263.03
+DM,Don Mills,263.04
+DM,Don Mills,264
+DM,Don Mills,266
+DM,Don Mills,267
+DM,Don Mills,268
+DO,Downsview,283.02
+DO,Downsview,284
+DO,Downsview,285
+DO,Downsview,289
+DO,Downsview,290.01
+DO,Downsview,290.02
+DO,Downsview,291.02
+DO,Downsview,291.03
+DO,Downsview,291.04
+DO,Downsview,295
+DO,Downsview,296
+DO,Downsview,311.04
+DU,Dufferin St Clair,109
+DU,Dufferin St Clair,110
+DU,Dufferin St Clair,112
+DU,Dufferin St Clair,113
+EA,Eatonville,213.01
+EA,Eatonville,213.02
+EA,Eatonville,220
+EA,Eatonville,221.01
+EA,Eatonville,221.02
+EA,Eatonville,222.01
+EA,Eatonville,222.02
+EA,Eatonville,223.01
+EA,Eatonville,223.02
+ES,Eglinton Square,347
+ES,Eglinton Square,348
+ES,Eglinton Square,349
+EB,Elmbrook Park,234
+EB,Elmbrook Park,235.01
+EB,Elmbrook Park,235.02
+EB,Elmbrook Park,236.01
+EB,Elmbrook Park,236.02
+EG,Evelyn Gregory,159.01
+EG,Evelyn Gregory,159.02
+EG,Evelyn Gregory,160
+EG,Evelyn Gregory,171
+EG,Evelyn Gregory,172
+FV,Fairview,273.01
+FV,Fairview,273.02
+FV,Fairview,301.01
+FV,Fairview,301.03
+FV,Fairview,301.04
+FV,Fairview,303
+FV,Fairview,304.01
+FV,Fairview,304.02
+FV,Fairview,304.03
+FV,Fairview,304.04
+FV,Fairview,304.05
+FV,Fairview,304.06
+FP,Flemingdon Park,260.01
+FP,Flemingdon Park,260.04
+FP,Flemingdon Park,260.05
+FP,Flemingdon Park,260.06
+FP,Flemingdon Park,260.07
+FH,Forest Hill,130
+FH,Forest Hill,131
+FH,Forest Hill,132
+FH,Forest Hill,133
+FH,Forest Hill,134
+FO,Fort York,2
+FO,Fort York,8.01
+FO,Fort York,8.02
+FO,Fort York,12.01
+FO,Fort York,12.03
+FO,Fort York,12.04
+GE,Gerrard Ashdale,25
+GE,Gerrard Ashdale,26
+GE,Gerrard Ashdale,74
+GE,Gerrard Ashdale,77
+GHP,Goldhawk Park,377.06
+GHP,Goldhawk Park,377.07
+GHP,Goldhawk Park,378.18
+GHP,Goldhawk Park,378.19
+GHP,Goldhawk Park,378.2
+GHP,Goldhawk Park,378.21
+GHP,Goldhawk Park,378.22
+GW,Guildwood,330
+GW,Guildwood,331.01
+GW,Guildwood,331.03
+GW,Guildwood,331.04
+GW,Guildwood,332
+HP,High Park,46
+HP,High Park,47.02
+HP,High Park,47.03
+HP,High Park,47.04
+HP,High Park,48
+HP,High Park,49
+HP,High Park,51
+HP,High Park,52
+HC,Highland Creek,362.01
+HC,Highland Creek,362.02
+HC,Highland Creek,362.03
+HC,Highland Creek,362.04
+HIL,Hillcrest,302.03
+HIL,Hillcrest,323.02
+HIL,Hillcrest,324.01
+HIL,Hillcrest,324.02
+HIL,Hillcrest,324.03
+HIL,Hillcrest,324.05
+HIL,Hillcrest,324.06
+HB,Humber Bay,215
+HB,Humber Bay,216
+HB,Humber Bay,217
+HS,Humber Summit,314.01
+HS,Humber Summit,314.02
+HS,Humber Summit,315.01
+HS,Humber Summit,315.02
+HS,Humber Summit,315.03
+HW,Humberwood,248.03
+HW,Humberwood,248.04
+HW,Humberwood,248.05
+JD,Jane Dundas,150
+JD,Jane Dundas,151
+JD,Jane Dundas,152
+JD,Jane Dundas,153
+JD,Jane Dundas,154
+JS,Jane Sheppard,294.02
+JS,Jane Sheppard,312.03
+JS,Jane Sheppard,312.06
+JS,Jane Sheppard,312.07
+JO,Jones,19
+JO,Jones,27
+JO,Jones,28.01
+JO,Jones,28.02
+KE,Kennedy Eglinton,345
+KE,Kennedy Eglinton,346.02
+KE,Kennedy Eglinton,351.01
+KE,Kennedy Eglinton,351.02
+KE,Kennedy Eglinton,353.03
+KE,Kennedy Eglinton,353.04
+LE,Leaside,186
+LE,Leaside,195.01
+LE,Leaside,195.02
+LE,Leaside,196.01
+LE,Leaside,196.02
+LE,Leaside,265
+LHS,Lillian H Smith,37
+LHS,Lillian H Smith,38
+LHS,Lillian H Smith,59
+LHS,Lillian H Smith,61
+LO,Locke,138
+LO,Locke,139.01
+LO,Locke,139.02
+LO,Locke,141.01
+LO,Locke,141.02
+LO,Locke,142
+LB,Long Branch,206.01
+LB,Long Branch,206.02
+MA,Main Street,22
+MA,Main Street,23
+MA,Main Street,78
+MA,Main Street,79
+MAL,Malvern,363.04
+MAL,Malvern,363.05
+MAL,Malvern,378.05
+MAL,Malvern,378.06
+MAL,Malvern,378.11
+MAL,Malvern,378.12
+MAL,Malvern,378.16
+MAL,Malvern,378.17
+MAL,Malvern,378.25
+MAL,Malvern,378.26
+MAL,Malvern,378.27
+MAL,Malvern,378.28
+MAS,Maria A Shchuka,161
+MAS,Maria A Shchuka,162
+MAS,Maria A Shchuka,166
+MAS,Maria A Shchuka,168
+MAS,Maria A Shchuka,169.01
+MAS,Maria A Shchuka,169.02
+MAS,Maria A Shchuka,170
+MRV,Maryvale,371
+MRV,Maryvale,372
+MRV,Maryvale,373
+MCG,McGregor Park,350
+MCG,McGregor Park,352
+MCG,McGregor Park,370.02
+MCG,McGregor Park,370.03
+MI,Mimico,200.01
+MI,Mimico,200.02
+MI,Mimico,201
+MI,Mimico,202
+MI,Mimico,203
+MI,Mimico,209
+MI,Mimico,210.01
+MI,Mimico,210.02
+MS,Morningside,358.01
+MS,Morningside,358.02
+MS,Morningside,358.03
+MS,Morningside,359
+MS,Morningside,360
+MD,Mount Dennis,155
+MD,Mount Dennis,156.01
+MD,Mount Dennis,156.02
+MD,Mount Dennis,157
+MD,Mount Dennis,158
+MD,Mount Dennis,173
+MD,Mount Dennis,174
+MP,Mount Pleasant,126
+MP,Mount Pleasant,127
+MP,Mount Pleasant,128.02
+MP,Mount Pleasant,128.04
+MP,Mount Pleasant,128.05
+MP,Mount Pleasant,128.06
+NT,New Toronto,204
+NT,New Toronto,205
+NT,New Toronto,207
+NT,New Toronto,208
+NYCL,North York Central,299.01
+NYCL,North York Central,299.02
+NYCL,North York Central,307.03
+NYCL,North York Central,307.04
+NYCL,North York Central,307.05
+NYCL,North York Central,307.06
+NYCL,North York Central,307.07
+NYCL,North York Central,308.02
+NYCL,North York Central,308.03
+NYCL,North York Central,308.04
+NYCL,North York Central,318
+NYCL,North York Central,319
+NYCL,North York Central,320.02
+NYCL,North York Central,321.01
+NYCL,North York Central,321.02
+NYCL,North York Central,322.01
+NYCL,North York Central,322.02
+ND,Northern District,129
+ND,Northern District,135
+ND,Northern District,136.01
+ND,Northern District,136.02
+ND,Northern District,137
+ND,Northern District,140
+NE,Northern Elms,244.01
+NE,Northern Elms,244.02
+NE,Northern Elms,245
+OV,Oakwood Village,163
+OV,Oakwood Village,164
+OV,Oakwood Village,165
+OV,Oakwood Village,167.01
+OV,Oakwood Village,167.02
+PM,Palmerston,57
+PM,Palmerston,93
+PA,Pape Danforth,72.01
+PA,Pape Danforth,72.02
+PA,Pape Danforth,75
+PA,Pape Danforth,82
+PA,Pape Danforth,83
+PA,Pape Danforth,84
+PA,Pape Danforth,85
+PK,Parkdale,3
+PK,Parkdale,4
+PK,Parkdale,5
+PK,Parkdale,6
+PK,Parkdale,7.01
+PK,Parkdale,7.02
+PK,Parkdale,9
+PK,Parkdale,44
+PL,Parliament,16
+PL,Parliament,29
+PL,Parliament,30
+PL,Parliament,31
+PL,Parliament,32
+PL,Parliament,33
+PL,Parliament,68
+PE,Perth Dupont,98
+PE,Perth Dupont,99
+PE,Perth Dupont,102.02
+PE,Perth Dupont,102.03
+PE,Perth Dupont,102.04
+PE,Perth Dupont,102.05
+PV,Pleasant View,302.01
+PV,Pleasant View,302.02
+PU,Port Union,361.01
+PU,Port Union,361.02
+PU,Port Union,802.01
+PU,Port Union,802.02
+QS,Queen Saulter,1
+QS,Queen Saulter,18
+RX,Rexdale,246
+RX,Rexdale,247.01
+RX,Rexdale,247.02
+RI,Richview,224
+RI,Richview,230.01
+RI,Richview,230.02
+RI,Richview,231
+RI,Richview,232
+RI,Richview,233
+RI,Richview,237.01
+RI,Richview,237.02
+RI,Richview,237.03
+RI,Richview,238.01
+RI,Richview,238.02
+RI,Richview,239
+RI,Richview,240.01
+RI,Richview,240.02
+RI,Richview,241
+RI,Richview,242
+RI,Richview,243.01
+RI,Richview,243.02
+RD,Riverdale,69
+RD,Riverdale,70
+RD,Riverdale,71
+RD,Riverdale,73
+RN,Runnymede,103
+RN,Runnymede,104
+SWS,S. Walter Stewart,181.01
+SWS,S. Walter Stewart,181.02
+SWS,S. Walter Stewart,182
+SWS,S. Walter Stewart,183.01
+SWS,S. Walter Stewart,183.02
+SWS,S. Walter Stewart,187
+SWS,S. Walter Stewart,188
+SWS,S. Walter Stewart,192
+SWS,S. Walter Stewart,193
+SA,Sanderson,10.01
+SA,Sanderson,10.02
+SA,Sanderson,11
+SA,Sanderson,39
+SA,Sanderson,40
+SC,Scarborough Civic Centre,363.06
+SC,Scarborough Civic Centre,363.07
+SC,Scarborough Civic Centre,367.02
+SC,Scarborough Civic Centre,368.01
+SC,Scarborough Civic Centre,368.02
+SC,Scarborough Civic Centre,369
+SP,Spadina Road,60
+SP,Spadina Road,92
+SI,St Clair Silverthorn,106
+SI,St Clair Silverthorn,107
+SI,St Clair Silverthorn,108
+SI,St Clair Silverthorn,111
+SJ,St. James Town,64
+SJ,St. James Town,65.01
+SJ,St. James Town,65.02
+SJ,St. James Town,66
+SJ,St. James Town,67
+SL,St. Lawrence,13.01
+SL,St. Lawrence,13.02
+SL,St. Lawrence,17
+ST,Steeles,376.04
+ST,Steeles,376.05
+ST,Steeles,376.06
+ST,Steeles,376.09
+ST,Steeles,376.13
+ST,Steeles,376.14
+SW,Swansea,50.01
+SW,Swansea,50.03
+SW,Swansea,50.04
+TA,Taylor Memorial,338
+TA,Taylor Memorial,339
+TA,Taylor Memorial,341.02
+TH,Thorncliffe,194.01
+TH,Thorncliffe,194.02
+TH,Thorncliffe,194.03
+TH,Thorncliffe,194.04
+TOD,Todmorden Room,184.01
+TOD,Todmorden Room,184.02
+TOD,Todmorden Room,185.01
+TOD,Todmorden Room,185.02
+VV,Victoria Village,261
+VV,Victoria Village,262.01
+WE,Weston,175.01
+WE,Weston,175.02
+WE,Weston,176
+WS,Woodside Square,377.04
+WS,Woodside Square,378.08
+WS,Woodside Square,378.14
+WS,Woodside Square,378.23
+WS,Woodside Square,378.24
+WP,Woodview Park,293
+WP,Woodview Park,313
+WY,Wychwood,116
+WY,Wychwood,117
+WY,Wychwood,118
+WY,Wychwood,119
+YW,York Woods,311.02
+YW,York Woods,311.03
+YW,York Woods,311.05
+YW,York Woods,311.06
+YW,York Woods,312.02
+YW,York Woods,312.04
+YW,York Woods,312.05
+YW,York Woods,316.01
+YW,York Woods,316.03
+YW,York Woods,316.04
+YW,York Woods,316.05
+YW,York Woods,316.06
+YO,Yorkville,62.01
+YO,Yorkville,62.02
+YO,Yorkville,63.03
+YO,Yorkville,63.04
+YO,Yorkville,63.05
+YO,Yorkville,63.06
+YO,Yorkville,88
+YO,Yorkville,89
+YO,Yorkville,90
+YO,Yorkville,91.01
+YO,Yorkville,91.02
