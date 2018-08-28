@@ -17,7 +17,7 @@ library(sf)
 library(tidyr)
 library(viridis)
 
-# Step 1: Acquire and clean data
+# Acquire and clean data
 # get Toronto census tracts shapefile
 if (!file.exists("raw_data/lct_000a16a_e.shp")) {
   dir.create("raw_data", showWarnings = F)
@@ -45,6 +45,9 @@ tpl_census_tracts <- read_csv("raw_data/Branch_Census_Tracts.csv", skip=1)
 #filter out branch that has no specific census tract
 tpl_census_tracts <- tpl_census_tracts[1:572, 1:3]
 tpl_census_tracts$`Census Tract` <- as.numeric(as.character(tpl_census_tracts$`Census Tract`))
+
+# save this cleaned data frame
+write_csv(tpl_census_tracts, "output_data/tpl_census_tracts_cleaned.csv")
 
 # join TPL-serviced census tracts to total Torontonian ones
 tpl_join <- left_join(canada_toronto, tpl_census_tracts, by=c("CTNAME2"="Census Tract"))
@@ -91,6 +94,9 @@ tpl_circulation$`All Languages` <- as.numeric(tpl_circulation$`All Languages`)
 tpl_circulation <- mutate(tpl_circulation, percent_MLC = round((`Total MLC` / `All Languages` * 100), digits = 1))
 tpl_circulation <- arrange(tpl_circulation, desc(tpl_circulation$percent_MLC))
 
+# Save this modified data frame
+write_csv(tpl_circulation, "output_data/tpl_circulation_mlc.csv")
+
 # Join multilingual circulation data to Toronto census tracts
 tpl_circulation[29,2] <- "Dufferin St Clair"
 tpl_circulation[25,2] <- "Parliament"
@@ -104,8 +110,9 @@ tpl_circulation[73,2] <- "St Clair Silverthorn"
 tpl_circulation[90,2] <- "Swansea"
 tpl_join_pmlc <- left_join(tpl_join, tpl_circulation, by=c("ID", "Branch Name"))
 tpl_join_pmlc <- mutate(tpl_join_pmlc, percent_MLC_c = percent_MLC/100)
+write_csv(tpl_join_pmlc, "output_data/tpl_join_pmlc.csv")
 
-# Wrangling Multilingual census tract information
+# Multilingual census tract information
 # Warning! This is a huge file (~ 130 MB zipped, ~1.3 GB unzipped). Downloading and processing may take some time.
 # If you want to avoid downloading this file, skip ahead to SKIP_ALL_THAT below
 
@@ -131,9 +138,6 @@ toronto <- toronto %>% select(-DATA_QUALITY_FLAG, -GNR, -GNR_LF, -`Notes: Profil
 
 # Please note that census tract 6 has no population data, though it has a geographic region associated with it
 # Likewise tract 205.00 has a small population (149) but no other data associated with it
-
-# saving output
-write_csv(toronto, "output_data/toronto2016ct.csv")
 
 # Or, SKIP_ALL_THAT and uncomment and run this instead
 # toronto <- read_csv("output_data/toronto2016ct.csv")
@@ -165,34 +169,17 @@ tpl_join_pmlc_ct <- mutate(tpl_join_pmlc_ct, percent_home_other_not_ef = round((
 tpl_join_pmlc_ct <- mutate(tpl_join_pmlc_ct, percent_home_total_not_ef = percent_home_not_ef + percent_home_other_not_ef)
 tpl_join_pmlc_ct <- mutate(tpl_join_pmlc_ct, gap_know_no_ef = (percent_MLC_c - percent_know_no_ef))
 
-#Making the map
-tpl_join_pmlc_ct2 <- filter(tpl_join_pmlc_ct, total_pop!= 0)
-tpl_join_pmlc_ct2 <- filter(tpl_join_pmlc_ct2, CTNAME2 != 205.00)
-
-just_avg_no_ef <- tpl_join_pmlc_ct2 %>% group_by(`Branch Name`) %>% summarise(avg_pc_know_no_ef = round(mean(percent_know_no_ef), digits = 4) * 100, avg_gap = round(mean(gap_know_no_ef), digits = 4) * 100)
-avg_join <- left_join(tpl_circulation, just_avg_no_ef, by="Branch Name")
-avg_join <- filter(avg_join, `Branch Name` != "Toronto Reference Library")
-avg_join <- arrange(avg_join, avg_gap)
-ggplot(avg_join) +
-  geom_segment(
-    aes(x = avg_pc_know_no_ef,
-        y = fct_reorder(`Branch Name`, avg_gap),
-        xend = percent_MLC,
-        yend = fct_reorder(`Branch Name`, avg_gap))) +
-  geom_point(aes(x=percent_MLC, y=`Branch Name`), color="light blue") +
-  geom_point(aes(x=avg_pc_know_no_ef, y=`Branch Name`), color="dark blue") +
-  labs(x="Percent", 
-       y="Library branch", 
-       title="Difference between non-English, non-French\nToronto Public Library circulation and\nlocal population that knows neither language", 
-       subtitle="Dark blue = Average branch's population that\ndoes not know English or French,\nLight blue = circulation of that branch's\nnon-English, non-French material", 
-       caption="Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016.\nby Nicholas Field @nk_field") + 
-  theme_minimal() +
-  theme(panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks=seq(0,30,5), limits=c(0,30), sec.axis = dup_axis())
-
-ggsave("output_data/tpl_gap_graph.png", width=20, height=30, units="cm")
+# Mapping anyone in Toronto whose first language is not English or French
+ggplot(canada_toronto) + 
+  geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_mother_not_ef), size=.1) + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Percent") + 
+  labs(title = "Whose first language is not English or French?", 
+       subtitle = "Plotted according to Toronto census tracts", 
+       caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
+  theme(plot.title = element_text(hjust=0), plot.subtitle = element_text(hjust=0.5)) + 
+  theme_void() + 
+  coord_sf(datum = NA)
+ggsave("output_data/first_language_map.png", width=20, height=16, units="cm")
 
 # That's it! Thanks for running my script. If you have problems, suggestions, or
 # feedback, feel free to reach out to me at:
