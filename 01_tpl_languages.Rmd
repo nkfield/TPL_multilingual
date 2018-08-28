@@ -86,7 +86,7 @@ https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/download-
 As this report draws on Canadian and Torontonian data, and discusses language use, it unapologetically uses Canadian English spellings. Sorry, eh?
 
 ## Thanks
-This report grew out of coursework for the course "Introduction to R for Journalists," offered by the Knight Center for Journalism in the Americas. Many thanks to Andrew Tran, the course instructor, for designing the course, providing feedback, and for suggesting the accessible Cividis colour palette. Thanks also to the course assistant Ryan Sagare. Greg Saulmon, Paula Jennings, and especially Clara Engel provided feedback and suggestions on the graphs and maps in this report, so they all have my gratitude.
+This report grew out of coursework for the course "Introduction to R for Journalists," offered by the Knight Center for Journalism in the Americas. Many thanks to Andrew Tran, the course instructor, for designing the course, providing feedback, and for suggesting the accessible Cividis colour palette. Thanks also to the course assistant Ryan Sagare. Greg Saulmon, Paula Jennings, Yurii Salikov, and especially Clara Engel provided feedback and suggestions on the graphs and maps in this report, so they all have my gratitude.
 
 # Part 0: Loading R libraries
 We will use these libraries to clean, process, graph, and map the data.
@@ -240,7 +240,7 @@ I ordered the branches in descending rank of their multilingual circulation, and
 # Step 3: Mapping
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc, aes(fill = percent_MLC_c), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Multilingual\nCirculation") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Multilingual\nCirculation") + 
   labs(title = "2017 Toronto Public Library circulation of multilingual\n(non-English, non-French) materials, by census tract", subtitle = "by Nicholas Field (@nk_field)", caption = "Sources: opendata.tpl.ca/ and open.canada.ca/") + 
   theme(plot.subtitle = element_text(hjust=0.5)) + 
   theme_void() + 
@@ -321,7 +321,7 @@ tpl_join_pmlc_ct <- mutate(tpl_join_pmlc_ct, gap_know_no_ef = (percent_MLC_c - p
 # Step 5: Mapping Toronto's population that does not speak English or French
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_know_no_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Percent of\nPopulation") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Percent of\nPopulation") + 
   labs(title = "What percent of each branch's catchment population\ndoes not speak English or French?", 
        subtitle = "by Nicholas Field (@nk_field)", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016") + 
@@ -330,7 +330,7 @@ ggplot(canada_toronto) +
   coord_sf(datum = NA)
 ggsave("output_data/no_ef_map.png", width=20, height=16, units="cm")
 ```
-In some places, these results match up with library branch catchment areas that have a high multilingual circulation, though that is not always the case. Note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data and therefore appears grey.
+In some places, these results match up with library branch catchment areas that have a high multilingual circulation, though that is not always the case. Note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data, is set to full transparency, and therefore appears pure white.
 
 # Part 6: Graphing the gap between populations that don't speak English or French and the libraries that serve them
 ```{r graph 02, warning=F, message=F}
@@ -380,7 +380,7 @@ Now let us map the difference between the last two maps, showing which regions h
 # What is the difference between our first and second maps?
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = gap_know_no_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Margin") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Margin") + 
   labs(title = "If you don't speak English or French,\nhow well does your library serve you?", 
        subtitle = "Difference between non-English, non-French library circulation\nand local population that does not speak English or French.\nNote: Areas below 0% see less multilingual use\nthan their population would suggest.", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
@@ -389,7 +389,7 @@ ggplot(canada_toronto) +
   coord_sf(datum = NA)
 ggsave("output_data/tpl_gap_map.png", width=20, height=16, units="cm")
 ```
-All of the caveats mentioned before apply here, of course. Additionally, note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data and therefore appears grey.
+All of the caveats mentioned before apply here, of course. Additionally, note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data, is set to full transparency, and therefore appears white.
 
 # Part 8: Mapping Torontonians whose first language is not English or French
 While the above maps and graphs displayed information about only those people who do not speak either English or French, here we will map something a bit more representative of Toronto's multilingual population: the percent of people (by census tract) whose first language is not English or French (but who may or may not speak either or both languages.
@@ -397,7 +397,7 @@ While the above maps and graphs displayed information about only those people wh
 # Step 8: Mapping anyone in Toronto whose first language is not English or French
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_mother_not_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Percent") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Percent") + 
   labs(title = "Whose first language is not English or French?", 
        subtitle = "Plotted according to Toronto census tracts", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
@@ -406,7 +406,7 @@ ggplot(canada_toronto) +
   coord_sf(datum = NA)
 ggsave("output_data/first_language_map.png", width=20, height=16, units="cm")
 ```
-Some parts of Toronto have 80% of the population knowing a first language other than English or French. Unsurprisingly, these populations are often also areas where libraries have higher levels of people who do not speak either English or French. Happily, these are often also areas that see a high multilingual circulation of library materials. Note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data and therefore appears grey.
+Some parts of Toronto have 80% of the population knowing a first language other than English or French. Unsurprisingly, these populations are often also areas where libraries have higher levels of people who do not speak either English or French. Happily, these are often also areas that see a high multilingual circulation of library materials. Note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data, is set to full transparency, and therefore appears white.
 
 # Conclusion
 Some directions for future research are to target specific languages, such as Chinese, rather than the broad category of multilingual material. While the Canadian census data are granular enough to support this kind of analysis, the TPL data sets used above are not. There are, however, about 2.5-3.0 GB of catalogue data in MARC format that might provide more detailed information, provided there is a way of converting them into an R-compatible format.

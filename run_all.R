@@ -132,7 +132,7 @@ ggsave("output_data/tpl_multilingual_graph.png", width=20, height=30, units="cm"
 # Step 3: Mapping
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc, aes(fill = percent_MLC_c), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Multilingual\nCirculation") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Multilingual\nCirculation") + 
   labs(title = "2017 Toronto Public Library circulation of multilingual\n(non-English, non-French) materials, by census tract", subtitle = "by Nicholas Field (@nk_field)", caption = "Sources: opendata.tpl.ca/ and open.canada.ca/") + 
   theme(plot.subtitle = element_text(hjust=0.5)) + 
   theme_void() + 
@@ -206,7 +206,7 @@ tpl_join_pmlc_ct <- mutate(tpl_join_pmlc_ct, gap_know_no_ef = (percent_MLC_c - p
 # Step 5: Mapping Toronto's population that do not speak English or French
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_know_no_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Percent of\nPopulation") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Percent of\nPopulation") + 
   labs(title = "What percent of each branch's catchment population\ndoes not speak English or French?", 
        subtitle = "by Nicholas Field (@nk_field)", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016") + 
@@ -240,7 +240,8 @@ ggplot(avg_join) +
   theme(panel.border = element_blank(), 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks=seq(0,30,5), limits=c(0,30), sec.axis = dup_axis())
+  scale_x_continuous(breaks=seq(0,30,5), limits=c(0,30), sec.axis = dup_axis()) +
+  scale_fill_continuous(na.value="transparent")
 
 ggsave("output_data/tpl_gap_graph.png", width=20, height=30, units="cm")
 
@@ -248,7 +249,7 @@ ggsave("output_data/tpl_gap_graph.png", width=20, height=30, units="cm")
 # What is the difference between our first and second maps?
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = gap_know_no_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Margin") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Margin") + 
   labs(title = "If you don't speak English or French,\nhow well does your library serve you?", 
        subtitle = "Difference between non-English, non-French library circulation\nand local population that does not speak English or French.\nNote: Areas below 0% see less multilingual use\nthan their population would suggest.", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
@@ -260,7 +261,7 @@ ggsave("output_data/tpl_gap_map.png", width=20, height=16, units="cm")
 # Step 8: Mapping anyone in Toronto whose first language is not English or French
 ggplot(canada_toronto) + 
   geom_sf(data=tpl_join_pmlc_ct, aes(fill = percent_mother_not_ef), size=.1) + 
-  scale_fill_viridis(label=percent, option="cividis", direction = -1, name="Percent") + 
+  scale_fill_viridis(na.value="transparent", label=percent, option="cividis", direction = -1, name="Percent") + 
   labs(title = "Whose first language is not English or French?", 
        subtitle = "Plotted according to Toronto census tracts", 
        caption = "Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016\nby Nicholas Field (@nk_field)") + 
