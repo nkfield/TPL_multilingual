@@ -1,7 +1,6 @@
 ---
 title: "Toronto’s libraries and languages"
 author: "Nicholas Field"
-date: '2018-08-26'
 output: 
   html_document:
     toc: true
@@ -12,6 +11,14 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+Created: 2018-08-26
+
+Last Updated: 2018-09-02
+
+URL: https://nkfield.github.io/TPL_multilingual/
+
+This work uses R version 3.5.1 (2018-07-02), "Feather Spray".
+
 # Introduction
 
 Toronto has a reputation for multiculturalism and multilingualism, so this report is an exploration of language in Toronto. Specifically, this report combines census data with open data from the Toronto Public Library to discover which branches best serve multilingual communities, and how that maps onto Toronto's language communities.
@@ -86,7 +93,12 @@ https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/prof/details/download-
 As this report draws on Canadian and Torontonian data, and discusses language use, it unapologetically uses Canadian English spellings. Sorry, eh?
 
 ## Thanks
-This report grew out of coursework for the course "Introduction to R for Journalists," offered by the Knight Center for Journalism in the Americas. Many thanks to Andrew Tran, the course instructor, for designing the course, providing feedback, and for suggesting the accessible Cividis colour palette. Thanks also to the course assistant Ryan Sagare. Greg Saulmon, Paula Jennings, Yurii Salikov, and especially Clara Engel provided feedback and suggestions on the graphs and maps in this report, so they all have my gratitude.
+This report grew out of coursework for the course "Introduction to R for Journalists," offered by the Knight Center for Journalism in the Americas. Many thanks to Andrew Tran, the course instructor, for designing the course, providing considerable feedback, and for suggesting the accessible Cividis colour palette. Thanks also to the course assistant Ryan Sagare. Greg Saulmon, Paula Jennings, Yurii Salikov, and especially Clara Engel provided feedback and suggestions on the graphs and maps in this report, so they all have my gratitude.
+
+## Licensing
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+Though it should go without saying, the data sets, the R language, and all of the libraries I use all have their own licenses, most of which are quite open. If you would like to use some or all of this work commercially, please contact me.
 
 # Part 0: Loading R libraries
 We will use these libraries to clean, process, graph, and map the data.
@@ -213,7 +225,7 @@ write_csv(tpl_join_pmlc, "output_data/tpl_join_pmlc.csv")
 ```
 
 # Part 2: Graphing multilingual circulation
-```{r graph 01, warning=F, message=F}
+```{r graph 01, warning=F, message=F, fig.width=8, fig.height=12}
 # Step 2: Graphing
 # Make plot, from highest percent multilingual circulation to lowest,
 # and with coord_flip, for tidiness
@@ -231,8 +243,6 @@ ggplot(data = tpl_circulation, aes(x=fct_reorder(`Branch Name`, percent_MLC), y 
 # Save with resizing for legibility
 ggsave("output_data/tpl_multilingual_graph.png", width=20, height=30, units="cm")
 ```
-Note: The branch names are squashed together when this graph is viewed within this report, but if you download it and view it at its full size, it is legible.
-
 I ordered the branches in descending rank of their multilingual circulation, and colour-coded them according to the tier of library. Duplicating the X (actually Y) axis allows for greater readability. Please note that I excluded some of the TPL's circulation services, specifically those that do not correspond to physical library branches, from this graph. (For more information on this issue, see Part 3, below.)
 
 # Part 3: Mapping multilingual circulation
@@ -333,7 +343,7 @@ ggsave("output_data/no_ef_map.png", width=20, height=16, units="cm")
 In some places, these results match up with library branch catchment areas that have a high multilingual circulation, though that is not always the case. Note that one tract in the Parkdale neighbourhood (southwestern Toronto) lacks census data, is set to full transparency, and therefore appears pure white.
 
 # Part 6: Graphing the gap between populations that don't speak English or French and the libraries that serve them
-```{r graph 02, warning=F, message=F}
+```{r graph 02, warning=F, message=F, fig.width=8, fig.height=13}
 # Step 6: Graphing the gap between populations that don't speak English or French and the libraries that serve them
 tpl_join_pmlc_ct2 <- filter(tpl_join_pmlc_ct, total_pop!= 0)
 tpl_join_pmlc_ct2 <- filter(tpl_join_pmlc_ct2, CTNAME2 != 205.00)
@@ -353,7 +363,7 @@ ggplot(avg_join) +
   labs(x="Percent", 
        y="Library branch", 
        title="Difference between non-English, non-French\nToronto Public Library circulation and\nlocal population that knows neither language", 
-       subtitle="Dark blue = Average branch's population that\ndoes not know English or French,\nLight blue = circulation of that branch's\nnon-English, non-French material", 
+       subtitle="Dark blue = Percent of a branch's catchment population\nthat does not know English or French\nLight blue = circulation of that branch's\nnon-English, non-French material", 
        caption="Sources: opendata.tpl.ca/, open.canada.ca/, and www12.statcan.gc.ca/\nLibrary circulation data from 2017, census data from 2016.\nby Nicholas Field @nk_field") + 
   theme_minimal() +
   theme(panel.border = element_blank(), 
@@ -363,8 +373,6 @@ ggplot(avg_join) +
 
 ggsave("output_data/tpl_gap_graph.png", width=20, height=30, units="cm")
 ```
-Note: The branch names are squashed together when this graph is viewed within this report, but if you download it and view it at its full size, it is legible.
-
 The above graph lists the library branches in descending order of the difference between the observed multilingual usage (in terms of circulation) and the percentage of the population who do not speak English or French. For the purposes of this graph, I assume that, at the very least, a branch's multilingual use should be the same as, or greater than, the percentage of its catchment population that does not speak English or French.
 
 The branches in the upper half of the graph have a higher multilingual circulation than percent of their catchment population that does not speak English of French. The branches in the middle, such as Hillcrest and Yorkville, have matching percentages, while those in the bottom have lower mutlingual circulation percentages than percent of local population that do not speak English or French.
